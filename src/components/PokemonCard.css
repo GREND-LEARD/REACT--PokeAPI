@@ -66,4 +66,10 @@
 
 .favorite-button.is-favorite {
   color: gold; /* Color cuando es favorito */
+}
+
+/* Añadimos estilo para el Link que envuelve la tarjeta */
+.pokemon-card-link {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del texto normal */
 } 

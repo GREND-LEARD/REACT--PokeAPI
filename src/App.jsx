@@ -8,6 +8,7 @@ import Search from './components/pages/Search';
 import Filter from './components/pages/Filter';
 import Favorites from './components/pages/Favorites';
 import Settings from './components/pages/Settings';
+import PokemonDetail from './components/pages/PokemonDetail';
 
 // // Placeholder para componentes de pestañas (los crearemos después)
 // const Home = () => <div>Home Page</div>;
@@ -64,6 +65,10 @@ function App() {
           <Route 
             path="/favorites" 
             element={<Favorites favoriteIds={favorites} isFavorite={isFavorite} toggleFavorite={toggleFavorite} />} 
+          />
+          <Route 
+            path="/pokemon/:pokemonId" 
+            element={<PokemonDetail isFavorite={isFavorite} toggleFavorite={toggleFavorite} />} 
           />
           <Route path="/settings" element={<Settings />} />
           {/* Ruta por defecto o Not Found podrías añadirla aquí */}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Importar Link
 import './PokemonCard.css'; // Crearemos este archivo para estilos
 
 // Recibe isFavorite y toggleFavorite como props
@@ -10,7 +11,8 @@ const PokemonCard = ({ pokemon, isFavorite, toggleFavorite }) => {
   }
 
   const handleFavoriteClick = (e) => {
-    e.stopPropagation(); // Evita que otros eventos de clic se disparen si la tarjeta es clickeable
+    e.stopPropagation(); // Evita que el Link se active al hacer clic en el botón
+    e.preventDefault(); // Previene cualquier comportamiento por defecto extra del botón dentro de un link
     toggleFavorite(pokemon.id);
   };
 
@@ -18,19 +20,22 @@ const PokemonCard = ({ pokemon, isFavorite, toggleFavorite }) => {
   const favoriteStatus = isFavorite(pokemon.id);
 
   return (
-    <div className={`pokemon-card ${favoriteStatus ? 'favorite' : ''}`}>
-      <button 
-        className={`favorite-button ${favoriteStatus ? 'is-favorite' : ''}`}
-        onClick={handleFavoriteClick}
-        aria-label={favoriteStatus ? 'Remove from favorites' : 'Add to favorites'}
-      >
-        {/* Usamos un simple ★ por ahora, podría ser un icono SVG */}
-        ★ 
-      </button>
-      <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-      <h3>{pokemon.name}</h3>
-      <p className="pokemon-id">#{pokemon.id}</p> {/* Mostramos el ID */}
-    </div>
+    // Envolvemos todo en Link, excepto el botón
+    <Link to={`/pokemon/${pokemon.id}`} className="pokemon-card-link">
+      <div className={`pokemon-card ${favoriteStatus ? 'favorite' : ''}`}>
+        <button 
+          className={`favorite-button ${favoriteStatus ? 'is-favorite' : ''}`}
+          onClick={handleFavoriteClick}
+          aria-label={favoriteStatus ? 'Quitar de favoritos' : 'Añadir a favoritos'} // Traducido
+        >
+          {/* Usamos un simple ★ por ahora, podría ser un icono SVG */}
+          ★ 
+        </button>
+        <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+        <h3>{pokemon.name}</h3>
+        <p className="pokemon-id">#{pokemon.id}</p> {/* Mostramos el ID */}
+      </div>
+    </Link>
   );
 };
 
