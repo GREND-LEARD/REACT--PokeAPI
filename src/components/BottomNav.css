@@ -1,0 +1,32 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333; /* Color oscuro para contraste */
+  border-top: 1px solid #444;
+  display: flex; /* Para distribuir los enlaces */
+  justify-content: space-around; /* Espacio uniforme */
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.nav-link {
+  color: #eee; /* Color claro para el texto */
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #555; /* Ligero cambio al pasar el mouse */
+}
+
+.nav-link.active {
+  background-color: #007bff; /* Azul para el enlace activo */
+  color: white;
+  font-weight: bold;
+}
+
+/* Agrega más estilos según necesites para los iconos/enlaces */ 

@@ -1,0 +1,54 @@
+.home-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.home-container h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.home-container p {
+  margin-bottom: 30px;
+  color: #555;
+  font-size: 1.1em;
+}
+
+.random-pokemon-section {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #fff;
+  display: inline-block; /* Para que el contenedor se ajuste al contenido */
+  min-width: 250px; /* Ancho mínimo */
+}
+
+.random-pokemon-section h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Estilos para el componente PokemonCard cuando está en Home */
+.random-pokemon-section .pokemon-card {
+  margin-bottom: 20px;
+  /* Podemos sobreescribir o añadir estilos específicos si es necesario */
+}
+
+.random-button {
+  display: block; /* Para que ocupe su propia línea */
+  margin: 0 auto; /* Centrar el botón */
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.random-button:hover {
+  background-color: #0056b3;
+} 
